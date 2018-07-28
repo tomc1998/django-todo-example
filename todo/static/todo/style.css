@@ -1,0 +1,16 @@
+.todo {
+    display: flex;
+    justify-content: stretch;
+}
+
+.todo .status {
+    width: 80px;
+}
+
+.todo .status.done {
+    color: green;
+}
+
+.todo .status.todo {
+    color: red;
+}

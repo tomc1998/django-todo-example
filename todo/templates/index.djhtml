@@ -1,0 +1,25 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'todo/style.css' %}" />
+
+<ul>
+    {% for todo in todo_list %}
+        <li class="todo">
+            <form action="{% url 'toggle-todo' todo.id %}" method="POST">
+                {% csrf_token %}
+                {% if todo.done %}
+                    <input type="submit" class="status done" value="DONE"/>
+                {% else %}
+                    <input type="submit" class="status todo" value="TODO"/>
+                {% endif %}
+            </form>
+            <a href="/todos/{{ todo.id }}/">{{ todo.name }}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<form action="{% url 'create-todo' %}" method="POST">
+    {% csrf_token %}
+    <input type="text"  name="name"/>
+    <input type="submit" value="Create" />
+</form>
