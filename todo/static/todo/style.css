@@ -7,10 +7,10 @@
     width: 80px;
 }
 
-.todo .status.done {
+.status.done {
     color: green;
 }
 
-.todo .status.todo {
+.status.todo {
     color: red;
 }

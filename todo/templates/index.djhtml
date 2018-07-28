@@ -13,7 +13,7 @@
                     <input type="submit" class="status todo" value="TODO"/>
                 {% endif %}
             </form>
-            <a href="/todos/{{ todo.id }}/">{{ todo.name }}</a>
+            <a href="todos/{{ todo.id }}/">{{ todo.name }}</a>
         </li>
     {% endfor %}
 </ul>
